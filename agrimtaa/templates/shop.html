@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container py-5" style="background: linear-gradient(to bottom, #e3f2fd, #90caf9); min-height: 100vh;">
+    <h2 class="text-center mb-4">Shop</h2>
+
+    <div class="row justify-content-center">
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            {% for image in images %}
+            <div class="card shadow-sm" style="width: 18rem; border-radius: 10px;">
+                <img src="{{ image.image.url }}" class="card-img-top rounded-top" alt="Uploaded Image" style="height: 200px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <p><strong>Title:</strong> {{ image.title }}</p>
+                    <p><strong>Description:</strong> {{ image.description }}</p>
+                    <p><strong>Price:</strong> {{ image.price }}</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="" class="btn btn-outline-success btn-sm">Pay</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

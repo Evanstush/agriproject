@@ -1,0 +1,122 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+    <link rel="stylesheet" href="{% static 'static/css/services.css' %}">
+    <!-- Hero Section -->
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section class="hero-section position-relative text-white" style="height: 100vh; overflow: hidden;">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="position-absolute w-100 h-100" style="object-fit: cover; filter: brightness(1.3) saturate(1.4);">
+    <source src="{% static 'assets/videos/strawberry.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Hero Content -->
+  <section class="hero-section position-relative" style="height: 100vh; background:transparent">
+  <!-- Centered Content -->
+  <div class="container h-100 d-flex justify-content-center align-items-center">
+    <div class="text-center position-relative" style="z-index: 2;">
+      <h1 class="display-2 fw-bold animate__animated animate__fadeInDown" style="animation-delay: 0.3s; color: #ffdc00; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);">
+        AgriMtaa: Growing Together, Harvesting Dreams
+      </h1>
+      <p class="lead mb-4 animate__animated animate__fadeInUp" style="animation-delay: 0.5s; font-size: 1.2rem; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);">
+        Transform your farming story with our tailored services and vibrant community. Together, we cultivate success.
+      </p>
+      <!-- Call to Action Buttons -->
+      <div class="d-flex gap-3 justify-content-center">
+        <a href="#services" class="btn btn-warning btn-lg px-5 py-2 rounded-pill shadow-lg animate__animated animate__zoomIn" style="animation-delay: 0.7s;">
+          Explore Services
+        </a>
+        <a href="#promotions" class="btn btn-success btn-lg px-5 py-2 rounded-pill shadow-lg animate__animated animate__zoomIn" style="animation-delay: 0.9s;">
+          View Promotions
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+<!-- Parallax Section -->
+<section class="parallax-section text-white py-5" style="background: url('{% static 'assets/watering.jpg' %}') no-repeat fixed center center / cover;">
+  <div class="container text-center">
+    <h2 class="display-4 fw-bold">Why Choose AgriMtaa?</h2>
+    <p class="lead mb-4">
+      Join a community where farmers and customers thrive together through innovation, dedication, and trust.
+    </p>
+    <div class="row mt-4">
+      <div class="col-lg-4 mb-3">
+        <div class="card bg-dark bg-opacity-75 p-4 text-white">
+          <i class="fas fa-leaf fa-3x mb-3"></i>
+          <h5 class="fw-bold text-white">Sustainable Practices</h5>
+          <p>Promoting eco-friendly farming techniques for long-term prosperity.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-3">
+        <div class="card bg-dark bg-opacity-75 p-4 text-white">
+          <i class="fas fa-chart-line fa-3x text-info mb-3"></i>
+          <h5 class="fw-bold">Growth Opportunities</h5>
+          <p>Unlock new markets and increase profitability with our tools and services.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-3">
+        <div class="card bg-dark bg-opacity-75 p-4 text-white">
+          <i class="fas fa-users fa-3x text-warning mb-3"></i>
+          <h5 class="fw-bold">Community Support</h5>
+          <p>Work together to solve challenges and share success stories.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Carousel -->
+<section id="testimonials" class="testimonials-section bg-light py-5">
+  <div class="container text-center">
+    <h2 class="display-5 fw-bold mb-5">What Our Community Says</h2>
+    <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <blockquote class="blockquote">
+            <p class="mb-4">
+              “AgriMtaa has completely transformed my farming experience. I’ve doubled my income in just one season!”
+            </p>
+            <footer class="blockquote-footer">John M., Small-Scale Farmer</footer>
+          </blockquote>
+        </div>
+        <div class="carousel-item">
+          <blockquote class="blockquote">
+            <p class="mb-4">
+              “The best part is the weather insights – I know exactly when to plant and harvest. It’s a game-changer!”
+            </p>
+            <footer class="blockquote-footer">Mary K., Coffee Farmer</footer>
+          </blockquote>
+        </div>
+        <div class="carousel-item">
+          <blockquote class="blockquote">
+            <p class="mb-4">
+              “Thanks to AgriMtaa’s transport services, I’ve saved time and reached more buyers effortlessly.”
+            </p>
+            <footer class="blockquote-footer">James O., Fresh Produce Supplier</footer>
+          </blockquote>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+    <style>
+
+    </style>
+
+
+
+{% endblock %}

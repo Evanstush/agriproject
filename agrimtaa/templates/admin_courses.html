@@ -1,0 +1,67 @@
+{% extends 'admin_home.html' %}
+{% load static %}
+{% block body %}
+<main class="container my-5">
+    <!-- Page Header -->
+    <div class="text-center mb-4">
+        <h2 class="text-success fw-bold display-4">Registered Course Participants</h2>
+        <p class="text-muted fst-italic">Click on a participant to view more details.</p>
+    </div>
+
+    <!-- Participant List -->
+    <div class="list-group shadow-sm">
+        {% for x in allcourses %}
+        <a href="#"
+           class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+           data-bs-toggle="modal"
+           data-bs-target="#participantModal{{ x.id }}"
+           style="padding: 15px 20px; border-radius: 8px; margin-bottom: 10px;">
+            <div>
+                <span class="d-block" style="font-size: 1.2rem; font-family: 'Georgia', serif; color: #343a40;">
+                    <strong>{{ x.name }}</strong>
+                </span>
+                <span class="badge bg-success text-white mt-1" style="font-size: 0.9rem;">
+                    {{ x.course }}
+                </span>
+            </div>
+            <i class="bi bi-chevron-right text-success" style="font-size: 1.5rem;"></i>
+        </a>
+
+        <!-- Modal for Participant Details -->
+        <div class="modal fade" id="participantModal{{ x.id }}" tabindex="-1" aria-labelledby="participantModalLabel{{ x.id }}" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-success" id="participantModalLabel{{ x.id }}">{{ x.name }}'s Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Full Name:</strong> {{ x.name }}</p>
+                        <p><strong>Course:</strong> <span class="text-primary">{{ x.course }}</span></p>
+                        <p><strong>Email:</strong> {{ x.email }}</p>
+                        <p><strong>Phone Number:</strong> {{ x.phone }}</p>
+                        <p><strong>Gender:</strong> {{ x.gender }}</p>
+                        <p><strong>Location:</strong> {{ x.location }}</p>
+                        <p><strong>Hours:</strong> {{ x.hours }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="" class="btn btn-danger">
+                            <i class="bi bi-trash3"></i> Delete
+                        </a>
+                        <a href="" class="btn btn-primary">
+                            <i class="bi bi-cash-stack"></i> Pay
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+<!-- Bootstrap Modal CSS and JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+{% endblock %}

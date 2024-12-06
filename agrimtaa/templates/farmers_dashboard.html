@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container py-5" style="background: linear-gradient(to bottom, #fef9f9, #f3e5f5); min-height: 100vh;">
+    <!-- Welcome Section -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="display-4 fw-bold text-danger">Welcome, {{ farmer.name }}!</h1>
+            <p class="text-muted">"The fruits of your labor are flourishing! Here's your space to grow and thrive."</p>
+        </div>
+    </div>
+
+    <!-- Highlights Section -->
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <h5 class="text-primary fw-bold">Your Products</h5>
+                    <p class="fs-3">{{ total_products }}</p>
+                    <a href="{% url 'all_products' %}" class="btn btn-outline-primary btn-sm">View All</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <h5 class="text-success fw-bold">Total Earnings (KES)</h5>
+                    <p class="fs-3">KES {{ total_earnings }}</p>
+                    <a href="#" class="btn btn-outline-success btn-sm">Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <h5 class="text-warning fw-bold">Pending Orders</h5>
+                    <p class="fs-3">{{ pending_orders }}</p>
+                    <a href="#" class="btn btn-outline-warning btn-sm">Review</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actionable Call-to-Actions -->
+    <div class="row text-center mb-5">
+        <div class="col">
+            <a href="{% url 'add_product' %}" class="btn btn-primary btn-lg shadow-sm mx-3">Add New Product</a>
+            <a href="{% url 'all_products' %}" class="btn btn-outline-secondary btn-lg shadow-sm mx-3">Manage Products</a>
+        </div>
+    </div>
+
+    <!-- Inspirational Message -->
+    <div class="row mb-4">
+        <div class="col text-center">
+            <blockquote class="blockquote">
+                <p class="mb-4 fst-italic">"To plant a garden is to believe in tomorrow."</p>
+                <footer class="blockquote-footer">Audrey Hepburn</footer>
+            </blockquote>
+        </div>
+    </div>
+</div>
+{% endblock %}

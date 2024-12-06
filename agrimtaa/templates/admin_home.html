@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Dashboard</title>
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'bootstrap-icons/bootstrap-icons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <script src="{% static 'js/contact.js' %}"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            height: 100vh;
+            background-color: #006400;
+            color: white;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #228B22;
+        }
+        .card-header {
+            background-color: #006400;
+            color: white;
+        }
+        .main-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 sidebar">
+                <h3 class="text-center py-4">AgriDashboard</h3>
+                <a href="{% url 'admin_home' %}">Dashboard</a>
+                <a href="{% url 'admin_farmers' %}">Farmers</a>
+                <a href="#">Customers</a>
+                <a href="{% url 'admin_courses' %}">Students</a>
+                <a href="{% url 'admin_contact' %}">Contacts</a>
+                <a href="#">Transactions</a>
+                <a href="#">Settings</a>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-10 main-content">
+                {% block body %}
+
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Dashboard Overview</h2>
+                    <button class="btn btn-success">Export Data</button>
+                </div>
+
+                <!-- Dashboard Widgets -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header">Total Income</div>
+                            <div class="card-body">
+                                <h4>$14,025</h4>
+                                <small>This Year</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header">Active Sessions</div>
+                            <div class="card-body">
+                                <h4>2,025</h4>
+                                <small>This Month</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header">Crop Yield</div>
+                            <div class="card-body">
+                                <h4>8,025 kg</h4>
+                                <small>This Season</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header">Number of Farms</div>
+                            <div class="card-body">
+                                <h4>5,645</h4>
+                                <small>Active Farms</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts or Additional Widgets -->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Crop Health</div>
+                            <div class="card-body">
+                                <canvas id="cropHealthChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Weather Updates</div>
+                            <div class="card-body">
+                                <p>Sunny | 25°C | Moderate Winds</p>
+                                <p>Next Rain Expected: 3 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Calendar Section -->
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">Calendar</div>
+            <div class="card-body">
+                <div class="text-center">
+                    <h5>November 2024</h5>
+                    <div class="d-flex justify-content-around fw-bold">
+                        <span>SU</span><span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span>
+                    </div>
+                    <div class="row text-center mt-2">
+                        <div class="col">27</div>
+                        <div class="col">28</div>
+                        <div class="col">29</div>
+                        <div class="col">30</div>
+                        <div class="col">31</div>
+                        <div class="col">1</div>
+                        <div class="col">2</div>
+                    </div>
+                    <div class="row text-center mt-2">
+                        <div class="col">3</div>
+                        <div class="col">4</div>
+                        <div class="col">5</div>
+                        <div class="col">6</div>
+                        <div class="col">7</div>
+                        <div class="col">8</div>
+                        <div class="col">9</div>
+                    </div>
+                    <div class="row text-center mt-2">
+                        <div class="col">10</div>
+                        <div class="col">11</div>
+                        <div class="col">12</div>
+                        <div class="col">13</div>
+                        <div class="col">14</div>
+                        <div class="col">15</div>
+                        <div class="col">16</div>
+                    </div>
+                    <div class="row text-center mt-2">
+                        <div class="col">17</div>
+                        <div class="col">18</div>
+                        <div class="col">19</div>
+                        <div class="col">20</div>
+                        <div class="col">21</div>
+                        <div class="col">22</div>
+                        <div class="col">23</div>
+                    </div>
+                    <div class="row text-center mt-2">
+                        <div class="col">24</div>
+                        <div class="col">25</div>
+                        <div class="col">26</div>
+                        <div class="col bg-primary text-white rounded">27</div>
+                        <div class="col">28</div>
+                        <div class="col">29</div>
+                        <div class="col">30</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Example Chart.js for Crop Health
+        const ctx = document.getElementById('cropHealthChart').getContext('2d');
+        const cropHealthChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Healthy', 'At Risk', 'Unhealthy'],
+                datasets: [{
+                    data: [70, 20, 10],
+                    backgroundColor: ['#28a745', '#ffc107', '#dc3545']
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

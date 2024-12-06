@@ -1,0 +1,106 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<main class="container my-5 text-white">
+  <h1 class="text-center fw-bold mb-4">Agricultural and Business Courses</h1>
+  <p class="text-center mb-5">
+    Empower yourself with knowledge! Explore our range of agricultural and business courses designed to equip you with essential skills for success. Each course includes hands-on training, expert guidance, and a certificate upon successful completion.
+  </p>
+
+  <!-- Introduction Section -->
+  <div class="mb-5 bg-success-subtle text-black">
+    <h2 class="text-center fw-bold">Why Choose Our Courses?</h2>
+    <p class="text-center">
+      Our courses are designed with farmers and aspiring agribusiness entrepreneurs in mind. Whether you're looking to gain foundational knowledge or specialize in advanced topics, we have something for everyone. Here's why you should enroll:
+    </p>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <i class="bi bi-mortarboard fs-1 text-warning mb-3"></i>
+        <h5 class="fw-bold">Expert Instructors</h5>
+        <p>Learn from experienced agriculturalists and business professionals.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-award fs-1 text-primary mb-3"></i>
+        <h5 class="fw-bold">Certificate of Completion</h5>
+        <p>Showcase your skills with an accredited certificate.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-lightbulb fs-1 text-success mb-3"></i>
+        <h5 class="fw-bold">Practical Learning</h5>
+        <p>Gain hands-on experience through field-based learning and real-world projects.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Offerings -->
+  <div class="row g-4">
+    <!-- Free Courses -->
+    <div class="col-md-6">
+      <div class="card bg-success text-white shadow border-0">
+        <div class="card-body">
+          <h3 class="card-title fw-bold">Free Courses</h3>
+          <p>These introductory courses are completely free and designed to provide essential knowledge in various aspects of agriculture and business.</p>
+          <ul>
+            <li><strong>Basics of Crop Farming</strong> (3 months)</li>
+            <li><strong>Livestock Management Essentials</strong> (2 months)</li>
+            <li><strong>Introduction to Agribusiness</strong> (1 month)</li>
+          </ul>
+          <p>Learn about sustainable farming practices, pest control, and basic financial management for free. Certificates are available upon successful completion.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paid Courses -->
+    <div class="col-md-6">
+      <div class="card bg-success text-white shadow border-0">
+        <div class="card-body">
+          <h3 class="card-title fw-bold">Paid Courses</h3>
+          <p>Advance your skills with our premium paid courses. These programs offer in-depth training and specialized knowledge for agricultural techniques and business strategies.</p>
+          <ul>
+            <li><strong>Advanced Soil Science</strong> (4 months) - <span class="fw-bold">KSh 20,000</span></li>
+            <li><strong>Modern Farm Management</strong> (6 months) - <span class="fw-bold">KSh 35,000</span></li>
+            <li><strong>Agri-Business Marketing Strategies</strong> (3 months) - <span class="fw-bold">KSh 15,000</span></li>
+            <li><strong>Precision Agriculture with Technology</strong> (5 months) - <span class="fw-bold">KSh 30,000</span></li>
+          </ul>
+          <p>Each course includes mentorship opportunities, access to exclusive resources, and a certificate upon completion.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="my-5">
+    <h2 class="text-center fw-bold mb-4">What Our Students Say</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <blockquote class="blockquote text-white">
+          <p>"The Basics of Crop Farming course was a game-changer! I now manage my farm more effectively and sustainably."</p>
+          <footer class="blockquote-footer text-white">Mary Wanjiru, Farmer</footer>
+        </blockquote>
+      </div>
+      <div class="col-md-4">
+        <blockquote class="blockquote text-white">
+          <p>"Modern Farm Management gave me the confidence to expand my agribusiness. Highly recommend!"</p>
+          <footer class="blockquote-footer text-white">James Mwangi, Agripreneur</footer>
+        </blockquote>
+      </div>
+      <div class="col-md-4">
+        <blockquote class="blockquote text-white">
+          <p>"The hands-on training and expert mentorship set these courses apart from others. Truly invaluable."</p>
+          <footer class="blockquote-footer text-white">Faith Kamau, Small-Scale Farmer</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enrollment Section -->
+  <div class="mt-5 text-center">
+    <h2 class="fw-bold">Enroll Today!</h2>
+    <p>Take the next step in your agricultural journey. Whether you're a beginner or an experienced farmer, our courses will help you thrive. For inquiries, contact us at <a href="mailto:support@agrimtaa.com" class="text-white">support@agrimtaa.com</a>.</p>
+    <div class="d-flex justify-content-center gap-3">
+    <a href="{% url 'register_courses' %}" class="btn btn-success btn-lg text-decoration-none">Register Courses</a>
+</div>
+
+  </div>
+</main>
+{% endblock %}

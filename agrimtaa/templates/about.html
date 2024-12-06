@@ -1,0 +1,117 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<main>
+  <!-- Introduction Section -->
+  <div class="container text-center my-5">
+    <h1 class="fw-bold text-success mb-4">Welcome to Agri Mtaa</h1>
+    <p class="lead text-white">
+      Founded in 2024, Agri Mtaa is on a mission to redefine agriculture in Kenya and beyond. By seamlessly integrating tradition and technology, we empower farmers and connect them with global markets, unlocking a future of limitless possibilities.
+    </p>
+  </div>
+
+  <!-- Our Journey Section -->
+  <section class="py-5" style="background-image: url('{% static "assets/maize1.jpg" %}')">
+    <div class="container text-white">
+      <h2 class="text-center fw-bold mb-4">Our Journey</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="lead">
+            Agri Mtaa began as a small initiative to address the struggles faced by farmers in accessing markets, tools, and resources. Armed with a vision of transforming agriculture, we grew into a robust platform that caters to farmers, buyers, renters, and service providers.
+          </p>
+          <p class="lead">
+            Over the years, we have expanded our offerings to include transport services, weather insights, and expert recommendations. By fostering collaboration, we ensure every farmer thrives in their endeavors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 text-white">Why Choose Agri Mtaa?</h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <i class="bi bi-graph-up-arrow fs-1 text-success mb-3"></i>
+          <h5 class="fw-bold text-white">Empowering Growth</h5>
+          <p class="text-white">We provide farmers with access to the latest tools, markets, and education to boost their yields and profits.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-shield-check fs-1 text-warning mb-3"></i>
+          <h5 class="fw-bold text-white">Trust & Transparency</h5>
+          <p class="text-white">With a secure platform and verified services, we ensure every transaction is seamless and reliable.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-cloud-sun fs-1 text-primary mb-3"></i>
+          <h5 class="fw-bold text-white">Weather Insights</h5>
+          <p class="text-white">Stay ahead with real-time weather updates and expert advice tailored for your farming needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4">Our Core Values</h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <i class="bi bi-people fs-1 text-success mb-3"></i>
+          <h5 class="fw-bold">Community</h5>
+          <p>Fostering strong bonds and collaboration between farmers and stakeholders to build a thriving agricultural ecosystem.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-lightbulb fs-1 text-warning mb-3"></i>
+          <h5 class="fw-bold">Innovation</h5>
+          <p>Continuously adopting cutting-edge technologies to address the evolving challenges of modern agriculture.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-globe fs-1 text-primary mb-3"></i>
+          <h5 class="fw-bold">Sustainability</h5>
+          <p>Promoting environmentally friendly practices to ensure a greener, healthier planet for future generations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 text-white">What Our Users Say</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <p class="text-muted">
+                "Agri Mtaa has been a game-changer for my farm. The resources and support are unmatched!"
+              </p>
+              <h6 class="fw-bold">- Jane Njeri</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <p class="text-muted">
+                "Thanks to Agri Mtaa, I can now sell my produce directly to buyers, saving time and earning more."
+              </p>
+              <h6 class="fw-bold">- Paul Otieno</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <p class="text-muted">
+                "The platform's transport services are reliable and affordable. Highly recommended!"
+              </p>
+              <h6 class="fw-bold">- Anne Kamau</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

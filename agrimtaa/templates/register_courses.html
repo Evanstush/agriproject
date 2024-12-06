@@ -1,0 +1,100 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-center text-success">Register for Agricultural Courses</h3>
+            <p class="text-center text-muted">Grow your skills and knowledge in agriculture!</p>
+            <form method="POST" class="p-4 border rounded shadow-sm" style="background-color: #f9fdf4;">
+                {% csrf_token %}
+
+                <!-- Full Names Field -->
+                <div class="mb-3">
+                    <label for="full_name" class="form-label text-success">Full Names</label>
+                    <div class="input-group shadow-sm">
+                        <span class="input-group-text bg-light text-success border-0 rounded-start">
+                            <i class="bi bi-person-circle"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 rounded-end" id="full_name" name="name" placeholder="Enter your full names" required>
+                    </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="mb-3">
+                    <label for="email" class="form-label text-success">Email</label>
+                    <div class="input-group shadow-sm">
+                        <span class="input-group-text bg-light text-success border-0 rounded-start">
+                            <i class="bi bi-envelope-open"></i>
+                        </span>
+                        <input type="email" class="form-control border-0 rounded-end" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <!-- Phone Number Field -->
+                <div class="mb-3">
+                    <label for="phone" class="form-label text-success">Phone Number</label>
+                    <div class="input-group shadow-sm">
+                        <span class="input-group-text bg-light text-success border-0 rounded-start">
+                            <i class="bi bi-telephone"></i>
+                        </span>
+                        <input type="tel" class="form-control border-0 rounded-end" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                </div>
+
+                <!-- Gender Field -->
+                <div class="mb-3">
+                    <label for="gender" class="form-label text-success">Gender</label>
+                    <select class="form-select shadow-sm border-0" id="gender" name="gender" required>
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Location Field -->
+                <div class="mb-3">
+                    <label for="location" class="form-label text-success">Location</label>
+                    <div class="input-group shadow-sm">
+                        <span class="input-group-text bg-light text-success border-0 rounded-start">
+                            <i class="bi bi-geo-alt"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 rounded-end" id="location" name="location" placeholder="Enter your location" required>
+                    </div>
+                </div>
+
+                <!-- Course to Take Field -->
+                <div class="mb-3">
+                    <label for="course" class="form-label text-success">Course to Take</label>
+                    <select class="form-select shadow-sm border-0" id="course" name="course" required>
+                        <option value="" disabled selected>Select a course</option>
+                        <option value="Crop Management">Crop Management</option>
+                        <option value="Livestock Farming">Livestock Farming</option>
+                        <option value="Agribusiness">Agribusiness</option>
+                        <option value="Soil Science">Soil Science</option>
+                    </select>
+                </div>
+
+                <!-- Available Hours Field -->
+                <div class="mb-3">
+                    <label for="available_hours" class="form-label text-success">Available Hours</label>
+                    <select class="form-select shadow-sm border-0" id="available_hours" name="hours" required>
+                        <option value="" disabled selected>Select your available hours</option>
+                        <option value="Morning (8 AM - 12 PM)">Morning (8 AM - 12 PM)</option>
+                        <option value="Afternoon (1 PM - 5 PM)">Afternoon (1 PM - 5 PM)</option>
+                        <option value="Evening (6 PM - 9 PM)">Evening (6 PM - 9 PM)</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-success w-100">Register</button>
+            </form>
+             <br>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

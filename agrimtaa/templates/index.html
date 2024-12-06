@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <title>Agrimtaa</title>
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'bootstrap-icons/bootstrap-icons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body style="background: url('{% static 'assets/tractor1.jpg' %}') no-repeat center center fixed; background-size: cover;">
+  <!-- Responsive Header with Hamburger Menu -->
+  <header class="bg-success text-white py-3">
+    <div class="m-2">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- Brand and Logo -->
+        <a class="navbar-brand text-white d-flex align-items-center" href="{% url 'index' %}">
+          <img src="{% static 'assets/tools/agricon2.png' %}" alt="Logo" class="img-fluid me-2" style="height: 50px;">
+          <span>Agri Mtaa</span>
+        </a>
+        <!-- Hamburger Menu Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white " href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white " href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white " href="{% url 'services' %}">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white " href="{% url 'courses' %}">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white " href="{% url 'shop' %}">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white " href="{% url 'contact' %}">Contact</a>
+            </li>
+          </ul>
+          <!-- Login and Sign-Up Buttons -->
+          <div class="d-flex ms-lg-3">
+            <a href="{% url 'sign_farmer' %}" class="btn btn-outline-light btn-sm mx-1">I am a farmer</a>
+            <a href="{% url 'sign_customer' %}" class="btn btn-outline-light btn-sm mx-1">I am a customer</a>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+      {% block body %}
+
+<div class="hero-section position-relative">
+  <!-- Background Image -->
+  <img src="{% static 'assets/maizebg-transformed.jpeg' %}" alt="Hero Background" class="hero-bg w-100" style="height: 80vh; object-fit: cover; position: absolute; top: 0; left: 0; z-index: -1;">
+
+  <!-- Overlay Content -->
+  <div class="overlay-content text-center text-white d-flex flex-column justify-content-center align-items-center container h-100" style="background: rgba(0, 0, 0, 0.5); height: 70vh;">
+    <h1 class="fw-bold mb-3 display-4 text-uppercase" style="letter-spacing: 2px;">Welcome to Agri Mtaa</h1>
+    <h2 class="mb-3 h4">The Best Site for All Farmers</h2>
+    <p class="lead mb-5" style="max-width: 700px; line-height: 1.8;">
+      Unlocking the potential of small-scale farmers with best-in-class inputs, financing, insurance, and training.
+    </p>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="{% url 'sign_farmer' %}" class="btn btn-success btn-lg px-4 py-2 fw-semibold" style="border-radius: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">I am a farmer</a>
+      <a href="{% url 'sign_customer' %}" class="btn btn-success btn-lg px-4 py-2 fw-semibold" style="border-radius: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">I am a customer</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="container my-5 text-white">
+    <div class="row text-center">
+        <h1 class="mb-4 fw-bold">What We Offer</h1>
+        <p class="mb-5 text-white">Empowering communities with the best agricultural solutions tailored for success.</p>
+    </div>
+
+    <div class="row text-center g-4">
+        <!-- Education -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <i class="bi bi-book fs-1 text-primary mb-3"></i>
+                    <h5 class="card-title fw-bold">We Offer Education</h5>
+                    <p class="card-text">Empowering farmers with knowledge and skills for sustainable success.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rent -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <i class="bi bi-house fs-1 text-success mb-3"></i>
+                    <h5 class="card-title fw-bold">We Rent</h5>
+                    <p class="card-text">Affordable access to land, tools, and vehicles for farming needs.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buy -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <i class="bi bi-cart fs-1 text-danger mb-3"></i>
+                    <h5 class="card-title fw-bold">We Buy</h5>
+                    <p class="card-text">Fair pricing for farmers' crops, ensuring equitable opportunities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sell -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <i class="bi bi-tag fs-1 text-warning mb-3"></i>
+                    <h5 class="card-title fw-bold">We Sell</h5>
+                    <p class="card-text">Top-quality farming inputs, tools, and equipment to boost productivity.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trade -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <i class="bi bi-arrow-left-right fs-1 text-info mb-3"></i>
+                    <h5 class="card-title fw-bold">We Trade</h5>
+                    <p class="card-text">Facilitating partnerships and market access for seamless transactions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transport -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <i class="bi bi-truck fs-1 text-secondary mb-3"></i>
+                    <h5 class="card-title fw-bold">We Transport</h5>
+                    <p class="card-text">Reliable logistics to get your goods where they need to be, on time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div id="carouselExample" class="carousel slide container my-5 shadow-lg rounded overflow-hidden" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+
+    <!-- Carousel Inner -->
+    <div class="carousel-inner">
+        <h1 CLASS="text-white text-center">GALLERY</h1>
+        <div class="carousel-item active">
+            <div class="position-relative">
+                <img src="{% static 'assets/tractor2.jpg' %}" class="d-block w-100" alt="Banner 1">
+                <div class="carousel-caption d-none d-md-block text-start bg-gradient p-3 rounded">
+                    <h3 class="text-light">Modern Farming Machinery</h3>
+                    <p>Empowering farmers with state-of-the-art tools for better yields.</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="position-relative">
+                <img src="{% static 'assets/carrots.jpg' %}" class="d-block w-100" alt="Banner 2">
+                <div class="carousel-caption d-none d-md-block text-center bg-gradient p-3 rounded">
+                    <h3 class="text-light">Fresh Produce</h3>
+                    <p>High-quality crops for sustainable agriculture.</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="position-relative">
+                <img src="{% static 'assets/cown.jpg' %}" class="d-block w-100" alt="Banner 3">
+                <div class="carousel-caption d-none d-md-block text-end bg-gradient p-3 rounded">
+                    <h3 class="text-light">Livestock Farming</h3>
+                    <p>Boosting productivity in dairy and meat production.</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="position-relative">
+                <img src="{% static 'assets/education/tea-transformed.jpeg' %}" class="d-block w-100" alt="Banner 4">
+                <div class="carousel-caption d-none d-md-block text-center bg-gradient p-3 rounded">
+                    <h3 class="text-light">Education & Training</h3>
+                    <p>Knowledge sharing for smarter farming practices.</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="position-relative">
+                <img src="{% static 'assets/sunflower.webp' %}" class="d-block w-100" alt="Banner 5">
+                <div class="carousel-caption d-none d-md-block text-start bg-gradient p-3 rounded">
+                    <h3 class="text-light">Sunflower Farming</h3>
+                    <p>Transforming farming landscapes with lucrative crops.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+  <!-- Flash Sale Section -->
+  <section class="my-4">
+    <div class="m-5">
+      <h2 class="text-center fw-bolder text-white">Flash Sale- Offers</h2>
+      <div class="row row-cols-1 row-cols-md-4 g-4 mt-3">
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/tools/shovels.jpg' %}" class="card-img-top h-75" alt="Product 1">
+            <div class="card-body">
+              <h5 class="card-title">Shovels</h5>
+              <p class="card-text">KSh 500</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/tools/hand trovels.webp' %}" class="card-img-top h-75" alt="Product 2">
+            <div class="card-body">
+              <h5 class="card-title">Hand trovels</h5>
+              <p class="card-text">KSh 700</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/tools/watercan.jpg' %}" class="card-img-top h-75" alt="Product 3">
+            <div class="card-body">
+              <h5 class="card-title">water can</h5>
+              <p class="card-text">KSh 200</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/tools/wrench.avif' %}" class="card-img-top h-75" alt="Product 4">
+            <div class="card-body">
+              <h5 class="card-title">wrench</h5>
+              <p class="card-text">KSh 379</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+            {% endblock %}
+  </main>
+
+      <!-- Footer -->
+  <footer class="bg-success text-white py-4">
+  <div class="container">
+    <div class="row">
+      <!-- Quick Links Section -->
+      <div class="col-md-3 mb-3">
+        <h6 class="fw-bold text-uppercase mb-2">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="{% url 'index' %}" class="text-white text-decoration-none hover-effect">Home</a></li>
+          <li><a href="{% url 'shop' %}" class="text-white text-decoration-none hover-effect">Shop</a></li>
+          <li><a href="{% url 'courses' %}" class="text-white text-decoration-none hover-effect">Courses</a></li>
+          <li><a href="{% url 'services' %}" class="text-white text-decoration-none hover-effect">Services</a></li>
+          <li><a href="{% url 'contact' %}" class="text-white text-decoration-none hover-effect">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources Section -->
+      <div class="col-md-3 mb-3">
+        <h6 class="fw-bold text-uppercase mb-2">Resources</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none hover-effect">Weather Updates</a></li>
+          <li><a href="#" class="text-white text-decoration-none hover-effect">Market Prices</a></li>
+          <li><a href="#" class="text-white text-decoration-none hover-effect">Farming Tips</a></li>
+          <li><a href="#" class="text-white text-decoration-none hover-effect">Agricultural News</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="col-md-3 mb-3">
+        <h6 class="fw-bold text-uppercase">Contact Us</h6>
+        <p class=""><i class="bi bi-geo-alt me-2"></i>Nairobi, Kenya</p>
+        <p class=""><i class="bi bi-telephone me-2"></i>+254 757 010 521</p>
+        <p class=""><i class="bi bi-envelope me-2"></i>support@agrimtaa.com</p>
+      </div>
+
+      <!-- Social Links Section -->
+      <div class="col-md-3 mb-3">
+        <h6 class="fw-bold text-uppercase mb-2">Follow Us On:</h6>
+        <a href="#" class="text-white me-3 hover-effect"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3 hover-effect"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-white me-3 hover-effect"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="text-white me-3 hover-effect"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://wa.me/254757010521" class="text-white me-3 hover-effect"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="text-white opacity-50">
+
+    <div class="row align-items-center">
+      <!-- App Links -->
+      <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        <h6 class="fw-bold text-uppercase">Download Our App:</h6>
+        <a href="#" class="bi bi-google-play btn-sm ">Google Play</a>
+        <a href="#" class="bi bi-apple btn-sm ">App Store</a>
+      </div>
+
+      <!-- Admin Section -->
+      <div class="col-md-6 text-center text-md-end">
+        <a href="{% url 'admin_login' %}" class="btn btn-outline-light btn-sm px-4 admin-btn">Admin Login</a>
+      </div>
+    </div>
+
+    <!-- Bottom Line -->
+    <div class="text-center mt-3">
+      <img src="{% static 'assets/tools/agricon2.png' %}" alt="AgriMtaa Logo" style="height: 40px;" class="mb-2">
+      <p class="mb-0 small">&copy; 2024 AgriMtaa. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
